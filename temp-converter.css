@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(120, 137, 253);
+}
+
+.container{
+    max-width: 550px;
+    background: rgb(169, 169, 253);
+    border-radius: 10px;
+    box-shadow: 6px 5px 15px 3px black;
+    font-family: sans-serif;
+    padding: 25px;
+}
+h1{
+    letter-spacing: 1.8px;
+}
+
+#celsius, #fahrenhite, #kelvin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+input{
+    flex: 5;
+    height: 60px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    outline: none;
+    border-radius: 8px  8px;
+    padding: 0 10px;
+    box-shadow: 1px 1px 1px 1px black;
+}
+
+.icon{
+    flex: 1;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 5px;
+    text-align: center;
+    font-size: 30px;
+    background: rgb(255, 255, 24);
+    box-shadow: 0px 0px 5px 2px black;
+    border-radius: 8px  8px;
+    margin-left: 14px;
+    
+}
+
+.button button{
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px 1px black;
+    
+}
+
+.button button:hover{
+    background: rgb(170, 185, 187);
+    color: bisque;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temprature Converter</title>
+    <link rel="stylesheet" href="temp-converter.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Temprature Converter
+            <span class="temp-icon"><img src="https://cdn-icons-png.flaticon.com/512/2622/2622352.png" alt="" height="50px" width="50px"></span>
+        </h1>
+        </div>
+
+
+        <div id="celsius">
+            <input type="number" placeholder="Celsius">
+            <span class="icon">&#8451</span>
+        </div>
+        <div id="fahrenhite">
+            <input type="number" placeholder="Fahrenhite">
+            <span class="icon">&#8457</span>
+        </div>
+        <div id="kelvin">
+            <input type="number" placeholder="Kelvin">
+            <span class="icon">&#8490</span>
+        </div>
+        <div class="button">
+            <button>Clear</button>
+        </div> 
+    </div>
+
+
+    <!-- Link to js -->
+    <script >
+
+        let celsiusInput = document.querySelector('#celsius > input')
+        let fahrenhiteInput = document.querySelector('#fahrenhite > input')
+        let kelvinInput = document.querySelector('#kelvin > input')
+
+        let  btn = document.querySelector('.button button')
+
+        function roundNumber(number) {
+            return Math.round(number*100)/100
+        }
+        celsiusInput.addEventListener('input',function(){
+            let cTemp = parseFloat(celsiusInput.value)
+            let fTemp = (cTemp*(9/5))+32
+            let kTemp =  cTemp + 273.15
+            
+            fahrenhiteInput.value = roundNumber(fTemp)
+            kelvinInput.value = roundNumber(kTemp)
+        })
+
+        fahrenhiteInput.addEventListener('input',function(){
+            let fTemp = parseFloat(fahrenhiteInput.value)
+            let cTemp = (fTemp - 32) * (5/9)
+            let kTemp =  (fTemp - 32) * (5/9) + 273.15
+
+            celsiusInput.value = roundNumber(cTemp)
+            kelvinInput.value = roundNumber(kTemp)
+        })
+
+        kelvinInput.addEventListener('input',function(){
+            let kTemp = parseFloat(kelvinInput.value)
+            let cTemp = kTemp - 273.15
+            let fTemp =  (fTemp - 273.15) * (9/5) + 32
+
+            celsiusInput.value = roundNumber(cTemp)
+            fahrenhiteInput.value = roundNumber(fTemp)
+        })
+
+        btn.addEventListener('click',()=>{
+            celsiusInput.value = ""
+            fahrenhiteInput.value = ""
+            kelvinInput.value = ""
+        })
+
+    </script>
+</body>
+</html>
